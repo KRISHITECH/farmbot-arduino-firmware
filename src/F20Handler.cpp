@@ -27,3 +27,4 @@ int F20Handler::execute(Command* command) {
 
 	return 1;
 }
+

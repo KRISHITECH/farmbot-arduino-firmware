@@ -27,3 +27,4 @@ int F42Handler::execute(Command* command) {
 
         return 0;
 }
+

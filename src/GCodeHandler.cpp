@@ -17,3 +17,4 @@ GCodeHandler::~GCodeHandler() {
 int GCodeHandler::execute(Command*) {
 	return -1;
 }
+

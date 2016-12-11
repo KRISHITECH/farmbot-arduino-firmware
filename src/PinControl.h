@@ -32,3 +32,4 @@ private:
 };
 
 #endif /* PINCONTROL_H_ */
+
