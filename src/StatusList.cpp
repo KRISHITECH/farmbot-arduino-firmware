@@ -65,4 +65,3 @@ int StatusList::setValue(int id, long value) {
 	return 0;
 }
 
-

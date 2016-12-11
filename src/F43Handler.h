@@ -25,4 +25,3 @@ private:
 };
 
 #endif /* F43HANDLER_H_ */
-

@@ -93,4 +93,3 @@ void StepperControlEncoder::shiftChannels() {
 	prvValChannelA = curValChannelA;
 	prvValChannelB = curValChannelB;
 }
-

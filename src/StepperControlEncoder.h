@@ -51,4 +51,3 @@ private:
 
 #endif /* STEPPERCONTROLENCODER_H_ */
 
-

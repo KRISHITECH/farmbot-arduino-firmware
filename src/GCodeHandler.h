@@ -17,4 +17,3 @@ public:
 };
 
 #endif /* GCODEHANDLER_H_ */
-

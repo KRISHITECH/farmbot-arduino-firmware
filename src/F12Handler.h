@@ -28,4 +28,3 @@ private:
 
 #endif /* F12HANDLER_H_ */
 
-

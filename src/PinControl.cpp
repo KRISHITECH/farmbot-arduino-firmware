@@ -69,4 +69,3 @@ int  PinControl::writePulse(int pinNr, int valueOne, int valueTwo, long time, in
 	writeValue( pinNr, valueTwo, mode);
 	return 0;
 }
-

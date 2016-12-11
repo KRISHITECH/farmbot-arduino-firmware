@@ -42,4 +42,3 @@ void ftm1_isr(void)
 }
 
 #endif
-

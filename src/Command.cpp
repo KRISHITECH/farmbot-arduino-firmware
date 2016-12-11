@@ -316,4 +316,3 @@ long Command::getQ() {
 	//msgQueue = 9876;
 	return msgQueue;
 }
-

@@ -33,4 +33,3 @@ int G28Handler::execute(Command* command) {
 	}
 	return 0;
 }
-

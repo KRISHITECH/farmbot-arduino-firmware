@@ -65,4 +65,3 @@ private:
 };
 
 #endif /* COMMAND_H_ */
-

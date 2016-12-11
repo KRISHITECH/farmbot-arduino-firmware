@@ -36,4 +36,3 @@ int F12Handler::execute(Command* command) {
         return 0;
 }
 
-

@@ -29,4 +29,3 @@ int F61Handler::execute(Command* command) {
 
         return 0;
 }
-

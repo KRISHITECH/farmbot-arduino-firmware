@@ -27,4 +27,3 @@ private:
 };
 
 #endif /* G00HANDLER_H_ */
-

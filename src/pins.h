@@ -50,4 +50,3 @@
 
 #define SERVO_0_PIN	   4
 #define SERVO_1_PIN	   5
-

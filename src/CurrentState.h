@@ -39,4 +39,3 @@ private:
 };
 
 #endif /* CURRENTSTATE_H_ */
-

@@ -55,4 +55,3 @@ int G00Handler::execute(Command* command) {
 	}
 	return 0;
 }
-

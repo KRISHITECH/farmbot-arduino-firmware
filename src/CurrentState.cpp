@@ -132,4 +132,3 @@ void CurrentState::printQAndNewLine() {
         Serial.print(Q);
         Serial.print("\r\n");
 }
-

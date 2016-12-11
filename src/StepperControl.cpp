@@ -1030,4 +1030,3 @@ void StepperControl::reportPosition(){
 void StepperControl::storeEndStops() {
 	CurrentState::getInstance()->storeEndStops();
 }
-
