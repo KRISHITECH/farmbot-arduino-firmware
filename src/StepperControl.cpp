@@ -105,6 +105,7 @@ StepperControl::StepperControl() {
 	encoderY.loadPinNumbers(Y_ENCDR_A, Y_ENCDR_B);
 	encoderZ.loadPinNumbers(Z_ENCDR_A, Z_ENCDR_B);
 
+	motorEnabled = false;
 }
 
 void StepperControl::test() {
@@ -925,11 +926,11 @@ void StepperControl::loadMotorSettings() {
 	timeOut[1]		= ParameterList::getInstance()->getValue(MOVEMENT_TIMEOUT_X);
 	timeOut[2]		= ParameterList::getInstance()->getValue(MOVEMENT_TIMEOUT_X);
 
-	motor2Inv[0]		= false;
+	motor2Inv[0]		= intToBool(ParameterList::getInstance()->getValue(MOVEMENT_SECONDARY_MOTOR_INVERT_X));
 	motor2Inv[1]		= false;
 	motor2Inv[2]		= false;
 
-	motor2Enbl[0]		= false;
+	motor2Enbl[0]		= intToBool(ParameterList::getInstance()->getValue(MOVEMENT_SECONDARY_MOTOR_X));
 	motor2Enbl[1]		= false;
 	motor2Enbl[2]		= false;
 
@@ -937,6 +938,13 @@ void StepperControl::loadMotorSettings() {
 	axisY.loadMotorSettings(speedMax[1], speedMin[1], stepsAcc[1], timeOut[1], homeIsUp[1], motorInv[1], endStInv[1], MOVEMENT_INTERRUPT_SPEED, motor2Enbl[1], motor2Inv[1]);
 	axisZ.loadMotorSettings(speedMax[2], speedMin[2], stepsAcc[2], timeOut[2], homeIsUp[2], motorInv[2], endStInv[2], MOVEMENT_INTERRUPT_SPEED, motor2Enbl[2], motor2Inv[2]);
 
+}
+
+bool StepperControl::intToBool(int value) {
+	if (value == 1) {
+		return true;
+	}
+	return false;
 }
 
 void StepperControl::loadEncoderSettings() {
@@ -990,7 +998,8 @@ unsigned long StepperControl::getMaxLength(unsigned long lengths[3]) {
 
 void StepperControl::enableMotors() {
 	motorMotorsEnabled = true;
-	axisX.enableMotor();
+
+  axisX.enableMotor();
 	axisY.enableMotor();
 	axisZ.enableMotor();
 	delay(100);
@@ -998,7 +1007,8 @@ void StepperControl::enableMotors() {
 
 void StepperControl::disableMotors() {
 	motorMotorsEnabled = false;
-	axisX.disableMotor();
+
+  axisX.disableMotor();
 	axisY.disableMotor();
 	axisZ.disableMotor();
 	delay(100);
