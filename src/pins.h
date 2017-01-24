@@ -1,5 +1,9 @@
 
 // For RAMPS 1.4
+#define E_STEP_PIN         26
+#define E_DIR_PIN          28
+#define E_ENABLE_PIN       24
+
 #define X1_STEP_PIN         54
 #define X1_DIR_PIN          55
 #define X1_ENABLE_PIN       38
