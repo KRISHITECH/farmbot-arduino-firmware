@@ -24,7 +24,7 @@ public:
 	StepperControlAxis();
 
 	void loadPinNumbers(int step, int dir, int enable, int min, int max, int step2, int dir2, int enable2);
-	void loadMotorSettings(	long speedMax, long speedMin, long stepsAcc, long timeOut, bool homeIsUp, bool motorInv, bool endStInv, long interruptSpeed, bool motor2Enbl, bool motor2Inv);
+	void loadMotorSettings(	long speedMax, long speedMin, long stepsAcc, long timeOut, bool homeIsUp, bool motorInv, bool motor2Inv, bool endStInv, long interruptSpeed);
 	void loadCoordinates(long sourcePoint, long destinationPoint, bool home);
 	void setMaxSpeed(long speed);
 
@@ -86,9 +86,9 @@ private:
 	int pinEnable;
 
 	// pin settings primary motor
-	int pin2Step;
-	int pin2Direction;
-	int pin2Enable;
+	int pinStep2;
+	int pinDirection2;
+	int pinEnable2;
 
 	// pin settings primary motor
 	int pinMin;
