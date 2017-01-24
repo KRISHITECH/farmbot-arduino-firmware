@@ -7,9 +7,9 @@ StepperControlAxis::StepperControlAxis() {
         pinDirection    = 0;
         pinEnable       = 0;
 
-        pin2Step         = 0;
-        pin2Direction    = 0;
-        pin2Enable       = 0;
+        pinStep2         = 0;
+        pinDirection2    = 0;
+        pinEnable2       = 0;
 
         pinMin          = 0;
         pinMax          = 0;
@@ -284,9 +284,9 @@ void StepperControlAxis::StepperControlAxis::loadPinNumbers(int step, int dir, i
         pinDirection	= dir;
         pinEnable	= enable;
 
-        pin2Step	= step2;
-        pin2Direction	= dir2;
-        pin2Enable	= enable2;
+        pinStep2	= step2;
+        pinDirection2	= dir2;
+        pinEnable2	= enable2;
 
         pinMin		= min;
         pinMax		= max;
@@ -330,16 +330,16 @@ void StepperControlAxis::loadCoordinates(long sourcePoint, long destinationPoint
 
 void StepperControlAxis::enableMotor() {
 	digitalWrite(pinEnable, LOW);
-	if (motorMotor2Enl) {
-		digitalWrite(pin2Enable, LOW);
+	if (motorMotor2Enl != 0) {
+		digitalWrite(pinEnable2, LOW);
 	}
         movementMotorActive = true;
 }
 
 void StepperControlAxis::disableMotor() {
 	digitalWrite(pinEnable, HIGH);
-	if (motorMotor2Enl) {
-		digitalWrite(pin2Enable, HIGH);
+	if (motorMotor2Enl != 0) {
+		digitalWrite(pinEnable2, HIGH);
 	}
         movementMotorActive = false;
 }
@@ -352,9 +352,9 @@ void StepperControlAxis::setDirectionUp() {
 	}
 
 	if (motorMotor2Enl && motorMotor2Inv) {
-		digitalWrite(pinDirection, LOW);
+		digitalWrite(pinDirection2, LOW);
 	} else {
-		digitalWrite(pinDirection, HIGH);
+		digitalWrite(pinDirection2, HIGH);
 	}
 }
 
@@ -366,9 +366,9 @@ void StepperControlAxis::setDirectionDown() {
 	}
 
 	if (motorMotor2Enl && motorMotor2Inv) {
-		digitalWrite(pin2Direction, HIGH);
+		digitalWrite(pinDirection2, HIGH);
 	} else {
-		digitalWrite(pin2Direction, LOW);
+		digitalWrite(pinDirection2, LOW);
 	}
 }
 
@@ -432,7 +432,7 @@ void StepperControlAxis::deactivateAxis() {
 
 void StepperControlAxis::setMotorStep() {
 	digitalWrite(pinStep, HIGH);
-	if (pin2Enable) {
+	if (pinEnable2) {
 		digitalWrite(pin2Step, HIGH);
 	}
 }
@@ -440,7 +440,7 @@ void StepperControlAxis::setMotorStep() {
 void StepperControlAxis::resetMotorStep() {
 	movementStepDone = true;
 	digitalWrite(pinStep, LOW);
-	if (pin2Enable) {
+	if (pinEnable2) {
 		digitalWrite(pin2Step, LOW);
 	}
 }
