@@ -1,5 +1,5 @@
 #include "ParameterList.h"
-#include <EEPROM.h>
+#include "EEPROM.h"
 
 static ParameterList* instanceParam;
 int paramValues[PARAM_NR_OF_PARAMS];
@@ -13,7 +13,7 @@ ParameterList * ParameterList::getInstance() {
 
 ParameterList::ParameterList() {
 	// at the first boot, load default parameters and set the parameter version
-	// so during subsequent boots the values are just loaded from eeprom 
+	// so during subsequent boots the values are just loaded from eeprom
 	int paramVersion = readValueEeprom(0);
 	if (paramVersion <= 0) {
 		setAllValuesToDefault();
@@ -313,4 +313,3 @@ bool ParameterList::validParam(int id) {
 			return false;
 	}
 }
-
