@@ -23,3 +23,17 @@
 /spec.d
 /arduino
 /.build
+
+src/.clang_complete
+
+src/.gcc-flags.json
+
+src/.pioenvs/.sconsign.dblite
+
+src/.pioenvs/do-not-modify-files-here.url
+
+src/.pioenvs/megaatmega2560/firmware.elf
+
+src/.pioenvs/megaatmega2560/firmware.hex
+
+src/.pioenvs/structure.hash
